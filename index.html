@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulador Interactivo de Redes VLANS </title>
+  <title>Simulador Interactivo de Redes VLANS</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -40,7 +40,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-K8RVCCDG7Z');
 </script>
 <body class="bg-slate-950 text-slate-100 font-sans h-screen flex flex-col overflow-hidden select-none">
@@ -53,9 +52,9 @@
       </div>
       <div>
         <h1 class="font-bold tracking-wider text-slate-100 text-sm flex items-center gap-2">
-          NET-EMU PRO <span class="bg-emerald-500/10 text-emerald-400 text-[10px] px-1.5 py-0.5 rounded border border-emerald-500/20 font-mono">v2.6 WEB-GUI</span>
+          EMULADOR DE RED <span class="bg-emerald-500/10 text-emerald-400 text-[10px] px-1.5 py-0.5 rounded border border-emerald-500/20 font-mono">v2.6 WEB-GUI</span>
         </h1>
-        <p class="text-[11px] text-slate-400">Simulador Interactivo de Redes & Omada Switch GUI</p>
+        <p class="text-[11px] text-slate-400">Simulador Interactivo de Redes, Switch GUI & VLans</p>
       </div>
     </div>
 
@@ -74,8 +73,8 @@
 
       <div class="h-4 w-px bg-slate-800 mx-1"></div>
 
-      <button onclick="toggleSimulation()" id="sim-btn" class="px-3 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/30 transition">
-        <i class="fa-solid fa-play text-emerald-400"></i> <span id="sim-btn-text">Simulación Activa</span>
+      <button onclick="toggleSimulation()" id="sim-btn" class="px-3 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 bg-amber-500/20 text-amber-400 border border-amber-500/30 hover:bg-amber-500/30 transition">
+        <i id="sim-btn-icon" class="fa-solid fa-play text-amber-400"></i> <span id="sim-btn-text">Simulación Pausada</span>
       </button>
       <button onclick="resetLab()" class="px-3 py-1.5 rounded text-xs font-medium flex items-center gap-1.5 text-slate-400 hover:bg-rose-500/20 hover:text-rose-400 transition border border-transparent hover:border-rose-500/30">
         <i class="fa-solid fa-rotate-right"></i> Reiniciar
@@ -124,7 +123,7 @@
               <i class="fa-solid fa-server text-sm"></i>
             </div>
             <div>
-              <div class="text-xs font-semibold text-slate-200">Switch Gestorable</div>
+              <div class="text-xs font-semibold text-slate-200">Switch Gestionable</div>
               <div class="text-[10px] text-slate-500">24 Puertos LAN</div>
             </div>
           </div>
@@ -216,9 +215,8 @@
           <div>
             <div class="flex items-center justify-between mb-1">
               <h3 class="text-sm font-bold text-slate-100 flex items-center gap-2">
-                <i class="fa-solid fa-network-wired text-cyan-400"></i> Lab 5: Red empresarial completa
+                <i class="fa-solid fa-network-wired text-cyan-400"></i> Ejercicio con switch administrable y Vlan
               </h3>
-              <span class="text-[11px] font-mono text-slate-400"><i class="fa-regular fa-clock"></i> 25:00</span>
             </div>
             <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden mb-3">
               <div id="lab-progress-bar" class="bg-amber-400 h-full transition-all duration-300" style="width: 0%"></div>
@@ -274,8 +272,8 @@
             <div class="step-item p-2 rounded-lg bg-slate-950/50 border border-slate-800 flex items-start gap-2.5">
               <i class="fa-regular fa-circle text-slate-600 text-sm mt-0.5" id="step-icon-5"></i>
               <div>
-                <div class="text-xs font-semibold text-slate-400" id="step-text-5">5. VLAN 20 (deposito) en Switch 2, Nombres y DHCP</div>
-                <p class="text-[10px] text-slate-500">Crea la VLAN 20 de nombre 'deposito' en Switch 2 (2 equipos asignados), nombra los equipos (ventas 1, ventas 2, deposito 1, deposito 2) y activa DHCP en todos los equipos.</p>
+                <div class="text-xs font-semibold text-slate-400" id="step-text-5">5. VLAN 20 (Deposito) en Switch 2, Nombres y DHCP</div>
+                <p class="text-[10px] text-slate-500">Crea la VLAN 20 de nombre 'Deposito' en Switch 2 (2 equipos asignados), nombra los equipos (Ventas 1, Ventas 2, Deposito 1, Deposito 2) y activa DHCP en todos los equipos.</p>
               </div>
             </div>
 
@@ -283,8 +281,8 @@
             <div class="step-item p-2 rounded-lg bg-slate-950/50 border border-slate-800 flex items-start gap-2.5">
               <i class="fa-regular fa-circle text-slate-600 text-sm mt-0.5" id="step-icon-6"></i>
               <div>
-                <div class="text-xs font-semibold text-slate-400" id="step-text-6">6. Pruebas de ping y aislamiento</div>
-                <p class="text-[10px] text-slate-500">Realiza pruebas de ping a: un PC sin VLAN, un PC en la misma VLAN y un PC en otra VLAN.</p>
+                <div class="text-xs font-semibold text-slate-400" id="step-text-6">6. Pruebas de ping, aislamiento y activación de simulación</div>
+                <p class="text-[10px] text-slate-500">Activa la simulación de tráfico y realiza pruebas de ping desde cualquier PC a: un PC en VLAN 10, un PC en VLAN 20 y un PC sin VLAN.</p>
               </div>
             </div>
           </div>
@@ -313,7 +311,7 @@
       <!-- MINIMIZED LAB BUTTON -->
       <button id="lab-min-btn" onclick="toggleLabMinimize()" class="hidden absolute top-4 left-4 bg-slate-900 border border-amber-500/40 text-amber-400 px-3 py-2 rounded-xl shadow-xl z-30 flex items-center gap-2 hover:bg-slate-800 transition">
         <i class="fa-solid fa-vial"></i>
-        <span class="text-xs font-bold text-slate-200">Lab 5: Red Empresarial</span>
+        <span class="text-xs font-bold text-slate-200">Ejercicio con switch administrable y Vlan</span>
         <span class="bg-amber-500/20 text-amber-300 text-[10px] px-1.5 py-0.5 rounded font-mono font-bold" id="min-progress-text">0%</span>
       </button>
 
@@ -321,7 +319,7 @@
       <div id="center-congratulations-modal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
         <div class="bg-slate-900 border-2 border-emerald-500/60 rounded-2xl p-6 max-w-md w-full shadow-2xl text-center space-y-4 relative">
           <!-- BOTÓN PARA CERRAR EL MODAL SIN REINICIAR -->
-          <button onclick="document.getElementById('center-congratulations-modal').classList.add('hidden')" class="absolute top-3 right-3 text-slate-400 hover:text-slate-100 text-sm p-1 transition">
+          <button onclick="closeCongratulationsModal()" class="absolute top-3 right-3 text-slate-400 hover:text-slate-100 text-sm p-1 transition">
             <i class="fa-solid fa-xmark"></i>
           </button>
           <div class="w-16 h-16 rounded-full bg-emerald-500/20 border-2 border-emerald-500 text-emerald-400 flex items-center justify-center mx-auto text-3xl">
@@ -329,9 +327,15 @@
           </div>
           <h2 class="text-lg font-bold text-slate-100">¡Felicitaciones! Has terminado</h2>
           <p class="text-xs text-slate-300 leading-relaxed">
-            Has completado con éxito todas las pruebas de aislamiento y comunicación del laboratorio de VLANs (misma VLAN, otra VLAN y sin VLAN).
+            Has completado con éxito todas las pruebas de aislamiento y comunicación del laboratorio de VLANs (equipo en VLAN 10, equipo en VLAN 20 y equipo sin VLAN).
           </p>
-          <div class="pt-2">
+          <p class="text-xs text-amber-300/90 bg-amber-500/10 border border-amber-500/20 p-2.5 rounded-lg leading-relaxed">
+            Puedes cerrar este aviso para continuar probando con el comando ping entre los distintos equipos o reiniciar la actividad si deseas practicar nuevamente.
+          </p>
+          <div class="pt-2 flex flex-col gap-2">
+            <button onclick="closeCongratulationsModal()" class="w-full py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl font-medium text-xs border border-slate-700 transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-xmark"></i> Cerrar aviso y seguir probando
+            </button>
             <button onclick="resetLab(); document.getElementById('center-congratulations-modal').classList.add('hidden');" class="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-xs shadow-lg transition flex items-center justify-center gap-2">
               <i class="fa-solid fa-rotate-right"></i> Reiniciar Laboratorio
             </button>
@@ -374,7 +378,7 @@
           <i class="fa-solid fa-sliders"></i> Propiedades
         </button>
         <button onclick="setPanelTab('gui')" id="tab-gui" class="px-3 py-2 text-xs font-bold rounded-t-lg border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center gap-1.5 whitespace-nowrap">
-          <i class="fa-solid fa-sitemap"></i> Switch GUI (Omada)
+          <i class="fa-solid fa-sitemap"></i> Switch GUI 
         </button>
         <button onclick="setPanelTab('cli')" id="tab-cli" class="px-3 py-2 text-xs font-bold rounded-t-lg border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center gap-1.5 whitespace-nowrap">
           <i class="fa-solid fa-terminal"></i> Consola / CLI
@@ -411,7 +415,7 @@
           <div class="p-3 bg-cyan-950/20 border border-cyan-800/40 rounded-xl flex items-center gap-3">
             <i class="fa-solid fa-shield-halved text-cyan-400 text-xl"></i>
             <div>
-              <div class="text-xs font-bold text-cyan-200">TP-Link / Omada Switch Configurator</div>
+              <div class="text-xs font-bold text-cyan-200"> Switch Configurator</div>
               <p class="text-[10px] text-cyan-400/80">Configuración de VLAN 802.1Q (24 Puertos GbE)</p>
             </div>
           </div>
@@ -490,12 +494,12 @@
 
         </div>
 
-        <!-- CONTENT FOR CLI (INICIA VACÍO) -->
+        <!-- CONTENT FOR CLI (INICIA VACÍO INDIVIDUAL POR EQUIPO) -->
         <div id="panel-cli-view" class="hidden space-y-3">
           <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 font-mono text-xs">
-            <div class="text-slate-500 text-[10px] mb-2">// Consola Terminal CLI (Simulador IOS / Omada)</div>
+            <div class="text-slate-500 text-[10px] mb-2">// Consola Terminal CLI (Simulador)</div>
             <div id="cli-output" class="h-64 overflow-y-auto space-y-1 text-slate-300 text-[11px] mb-2 p-2 bg-slate-900/80 rounded border border-slate-800">
-              <!-- VACÍO INICIALMENTE -->
+              <!-- CADA EQUIPO GUARDA SU HISTORIAL INDIVIDUAL -->
             </div>
             <form onsubmit="handleCliSubmit(event)" class="flex gap-2">
               <span class="text-emerald-400 font-bold flex items-center">&gt;</span>
@@ -521,1092 +525,7 @@
 
   </div>
 
-  <!-- JAVASCRIPT LOGIC -->
-  <script>
-    // GLOBAL STATE & HISTORY FOR UNDO
-    let currentTool = 'select';
-    let simulationActive = true;
-    let selectedNodeId = null;
-    let cableStartNodeId = null;
-    let cableStartPort = null;
-
-    let nodes = [];
-    let cables = [];
-    let stateHistory = [];
-
-    let showAllPortsInSwitch = false;
-
-    // Matriz de validación para las 3 pruebas del Paso 6
-    let step6Tests = {
-      sameVlan: false,    // Ping a PC en la misma VLAN
-      otherVlan: false,   // Ping a PC en otra VLAN
-      noVlan: false       // Ping a PC sin VLAN (VLAN 1 por defecto)
-    };
-
-    // Lab 5 Progress State (6 pasos)
-    let currentLabStep = 1;
-
-    window.onload = () => {
-      nodes = [];
-      cables = [];
-      stateHistory = [];
-
-      initDraggableLab();
-      saveState();
-      renderAll();
-      updateLabUI();
-    };
-
-    function saveState() {
-      if(stateHistory.length > 20) stateHistory.shift();
-      stateHistory.push(JSON.stringify({ nodes, cables }));
-    }
-
-    function undoLastAction() {
-      if (stateHistory.length <= 1) {
-        showCablingAlert("No hay más acciones para deshacer.", 2500);
-        return;
-      }
-      stateHistory.pop();
-      const prevState = JSON.parse(stateHistory[stateHistory.length - 1]);
-      nodes = prevState.nodes;
-      cables = prevState.cables;
-      cableStartNodeId = null;
-      cableStartPort = null;
-      renderAll();
-      checkLabProgress();
-      showCablingAlert("Último cambio deshecho.", 2000);
-    }
-
-    function toggleRightPanel(forceOpen = null) {
-      const panel = document.getElementById('config-panel');
-      const isHidden = panel.classList.contains('translate-x-full');
-
-      if(forceOpen === true || (forceOpen === null && isHidden)) {
-        panel.classList.remove('translate-x-full');
-      } else if(forceOpen === false || (forceOpen === null && !isHidden)) {
-        panel.classList.add('translate-x-full');
-      }
-    }
-
-    function showCablingAlert(msg, duration = 0) {
-      const alertBox = document.getElementById('cabling-alert-box');
-      const alertText = document.getElementById('cabling-alert-text');
-      
-      if(!msg) {
-        alertBox.classList.add('hidden');
-        return;
-      }
-
-      alertText.innerText = msg;
-      alertBox.classList.remove('hidden');
-
-      if(duration > 0) {
-        setTimeout(() => {
-          alertBox.classList.add('hidden');
-        }, duration);
-      }
-    }
-
-    function showVlanGuiAlert(msg, duration = 3000) {
-      const alertBox = document.getElementById('vlan-gui-alert');
-      const alertText = document.getElementById('vlan-gui-alert-text');
-
-      alertText.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> ${msg}`;
-      alertBox.classList.remove('hidden');
-
-      setTimeout(() => {
-        alertBox.classList.add('hidden');
-      }, duration);
-    }
-
-    function spawnDevice(type) {
-      saveState();
-      const id = type + '_' + Date.now();
-      const count = nodes.filter(n => n.type === type).length + 1;
-      
-      let label = '';
-      if(type === 'router') label = 'Router' + count;
-      if(type === 'switch') label = 'Switch' + count;
-      if(type === 'pc') label = 'PC' + count;
-
-      const x = 220 + Math.random() * 150;
-      const y = 150 + Math.random() * 150;
-
-      let ports = [];
-      if(type === 'router') {
-        ports = [
-          { name: 'WAN/PON', type: 'WAN', occupied: false },
-          { name: 'LAN1', type: 'LAN', occupied: false },
-          { name: 'LAN2', type: 'LAN', occupied: false },
-          { name: 'LAN3', type: 'LAN', occupied: false },
-          { name: 'LAN4', type: 'LAN', occupied: false }
-        ];
-      } else if(type === 'switch') {
-        for(let i = 1; i <= 24; i++) {
-          ports.push({ name: `LAN${i}`, type: 'LAN', occupied: false });
-        }
-      } else if(type === 'pc') {
-        ports = [{ name: 'LAN', type: 'LAN', occupied: false }];
-      }
-
-      let defaultVlans = [];
-      if(type === 'switch') {
-        defaultVlans = [
-          { id: 1, name: 'Default', ports: ['LAN1','LAN2','LAN3','LAN4'], pvid: 1 }
-        ];
-      }
-
-      const newNode = {
-        id,
-        type,
-        label,
-        x,
-        y,
-        vlanId: 1,
-        ip: type === 'pc' ? '' : (type === 'router' ? '192.168.0.1' : ''),
-        dhcpEnabled: false,
-        ports,
-        vlans: defaultVlans
-      };
-
-      nodes.push(newNode);
-      selectNode(id);
-      renderAll();
-      checkLabProgress();
-    }
-
-    function renderAll() {
-      const nodesLayer = document.getElementById('nodes-layer');
-      const svgLayer = document.getElementById('network-svg');
-
-      nodesLayer.innerHTML = '';
-      svgLayer.innerHTML = '';
-
-      // Draw Cables
-      cables.forEach(c => {
-        const n1 = nodes.find(n => n.id === c.from);
-        const n2 = nodes.find(n => n.id === c.to);
-        if(n1 && n2) {
-          const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-          line.setAttribute('x1', n1.x + 32);
-          line.setAttribute('y1', n1.y + 32);
-          line.setAttribute('x2', n2.x + 32);
-          line.setAttribute('y2', n2.y + 32);
-          line.setAttribute('stroke', '#38bdf8');
-          line.setAttribute('stroke-width', '2.5');
-          line.setAttribute('stroke-dasharray', '6,6');
-          svgLayer.appendChild(line);
-
-          if(simulationActive) {
-            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            circle.setAttribute('r', '4');
-            circle.setAttribute('fill', '#4ade80');
-            
-            const anim = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
-            anim.setAttribute('path', `M ${n1.x+32} ${n1.y+32} L ${n2.x+32} ${n2.y+32}`);
-            anim.setAttribute('dur', (1.5 + Math.random()).toFixed(1) + 's');
-            anim.setAttribute('repeatCount', 'indefinite');
-            
-            circle.appendChild(anim);
-            svgLayer.appendChild(circle);
-          }
-        }
-      });
-
-      // Draw Nodes
-      nodes.forEach(node => {
-        const el = document.createElement('div');
-        el.className = `absolute cursor-pointer flex flex-col items-center group transition-transform ${selectedNodeId === node.id ? 'scale-110 z-20' : 'z-10'}`;
-        el.style.left = node.x + 'px';
-        el.style.top = node.y + 'px';
-
-        let icon = 'fa-desktop';
-        let color = 'bg-indigo-500/20 text-indigo-400 border-indigo-500/40';
-        if(node.type === 'router') { icon = 'fa-network-wired'; color = 'bg-blue-500/20 text-blue-400 border-blue-500/40'; }
-        if(node.type === 'switch') { icon = 'fa-server'; color = 'bg-cyan-500/20 text-cyan-400 border-cyan-500/40'; }
-
-        const isSelected = selectedNodeId === node.id;
-        const vlanTag = node.type === 'pc' ? (node.vlanId > 1 ? `<span class="bg-amber-500/20 text-amber-300 text-[9px] px-1 rounded border border-amber-500/30">VLAN ${node.vlanId}</span>` : `<span class="bg-slate-800 text-slate-400 text-[9px] px-1 rounded">Sin VLAN</span>`) : '';
-
-        let switchVlansText = '';
-        if(node.type === 'switch' && node.vlans.length > 0) {
-          const activeVlanNames = node.vlans.map(v => `${v.name}(${v.id})`).join(', ');
-          switchVlansText = `<div class="text-[9px] text-emerald-400 font-mono mt-0.5 bg-slate-900/90 px-1.5 py-0.5 rounded border border-emerald-500/30">${activeVlanNames}</div>`;
-        }
-
-        el.innerHTML = `
-          <div class="w-16 h-16 rounded-2xl ${color} border-2 flex items-center justify-center text-xl shadow-xl backdrop-blur relative ${isSelected ? 'ring-4 ring-emerald-500/50 border-emerald-400' : ''}">
-            <i class="fa-solid ${icon}"></i>
-            <span class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-slate-950"></span>
-          </div>
-          <div class="mt-1.5 text-center flex flex-col items-center">
-            <div class="text-xs font-bold text-slate-100 flex items-center gap-1">${node.label} ${vlanTag}</div>
-            <div class="text-[9.5px] font-mono text-slate-400">${node.ip || (node.type === 'pc' ? 'Sin IP (DHCP Off)' : 'L2 Switch')}</div>
-            ${switchVlansText}
-          </div>
-        `;
-
-        let isDragging = false;
-        let startX, startY;
-
-        el.onmousedown = (e) => {
-          if(currentTool === 'cable') {
-            openPortPicker(node);
-            return;
-          }
-
-          isDragging = true;
-          startX = e.clientX - node.x;
-          startY = e.clientY - node.y;
-          selectNode(node.id);
-
-          const onMouseMove = (me) => {
-            if(!isDragging) return;
-            node.x = me.clientX - startX;
-            node.y = me.clientY - startY;
-            renderAll();
-          };
-
-          const onMouseUp = () => {
-            isDragging = false;
-            window.removeEventListener('mousemove', onMouseMove);
-            window.removeEventListener('mouseup', onMouseUp);
-          };
-
-          window.addEventListener('mousemove', onMouseMove);
-          window.addEventListener('mouseup', onMouseUp);
-        };
-
-        nodesLayer.appendChild(el);
-      });
-    }
-
-    function openPortPicker(device) {
-      if(device.type === 'pc') {
-        const alreadyConnected = cables.some(c => c.from === device.id || c.to === device.id);
-        if(alreadyConnected) {
-          showCablingAlert(`La PC ${device.label} ya posee 1 conexión ocupada.`, 3000);
-          return;
-        }
-      }
-
-      const modal = document.getElementById('port-picker-modal');
-      const info = document.getElementById('port-picker-device-info');
-      const list = document.getElementById('port-picker-list');
-
-      info.innerText = `Dispositivo: ${device.label} (${device.type.toUpperCase()})`;
-      list.innerHTML = '';
-
-      device.ports.forEach(port => {
-        const isOccupied = port.occupied;
-        const btn = document.createElement('button');
-        btn.disabled = isOccupied;
-        btn.className = `w-full p-2 rounded flex items-center justify-between transition ${isOccupied ? 'bg-slate-800 text-slate-600 border border-slate-800 cursor-not-allowed' : 'bg-slate-950 hover:bg-slate-800 text-slate-200 border border-slate-700'}`;
-        
-        btn.innerHTML = `
-          <span>${port.name} (${port.type})</span>
-          <span class="text-[10px] px-1.5 py-0.5 rounded ${isOccupied ? 'bg-rose-500/20 text-rose-400' : 'bg-emerald-500/20 text-emerald-400'}">${isOccupied ? 'Ocupado' : 'Disponible'}</span>
-        `;
-
-        btn.onclick = () => {
-          closePortPicker();
-          selectPortForCable(device.id, port.name, port.type);
-        };
-
-        list.appendChild(btn);
-      });
-
-      modal.classList.remove('hidden');
-    }
-
-    function closePortPicker() {
-      document.getElementById('port-picker-modal').classList.add('hidden');
-    }
-
-    function selectPortForCable(nodeId, portName, portType) {
-      const node = nodes.find(n => n.id === nodeId);
-
-      if(node.type === 'router' && portType === 'WAN') {
-        showCablingAlert("⚠️ ALERTA WAN: Para conectar a la red local/switch, debes usar un puerto LAN del router.", 4500);
-        return;
-      }
-
-      if(!cableStartNodeId) {
-        cableStartNodeId = nodeId;
-        cableStartPort = portName;
-        showCablingAlert(`Origen: ${node.label} (${portName}). Selecciona el segundo equipo.`);
-      } else {
-        if(cableStartNodeId !== nodeId) {
-          saveState();
-          
-          const srcNode = nodes.find(n => n.id === cableStartNodeId);
-          const p1 = srcNode.ports.find(p => p.name === cableStartPort);
-          const p2 = node.ports.find(p => p.name === portName);
-          if(p1) p1.occupied = true;
-          if(p2) p2.occupied = true;
-
-          cables.push({ 
-            from: cableStartNodeId, 
-            fromPort: cableStartPort, 
-            to: nodeId, 
-            toPort: portName 
-          });
-
-          showCablingAlert(`¡Conectado! ${srcNode.label} [${cableStartPort}] ↔ ${node.label} [${portName}]`, 3500);
-          
-          cableStartNodeId = null;
-          cableStartPort = null;
-          setTool('select');
-          renderAll();
-          checkLabProgress();
-        }
-      }
-    }
-
-    function setTool(tool) {
-      currentTool = tool;
-      document.querySelectorAll('.tool-btn').forEach(btn => {
-        btn.classList.remove('bg-emerald-600', 'text-white');
-        btn.classList.add('text-slate-400');
-      });
-      if(tool === 'select') {
-        document.getElementById('tool-select').classList.add('bg-emerald-600', 'text-white');
-        showCablingAlert(null);
-      } else {
-        document.getElementById('tool-cable').classList.add('bg-emerald-600', 'text-white');
-        showCablingAlert("Modo cableado activo. Haz clic en un dispositivo para ver conexiones disponibles.");
-      }
-    }
-
-    function selectNode(id) {
-      selectedNodeId = id;
-      const node = nodes.find(n => n.id === id);
-      const title = document.getElementById('device-title');
-      const sub = document.getElementById('device-sub');
-      const iconBox = document.getElementById('device-icon-box');
-      const badge = document.getElementById('device-badge');
-
-      if(node) {
-        title.innerText = `${node.label}`;
-        sub.innerText = node.ip ? `IP: ${node.ip}` : (node.type === 'pc' ? 'Sin IP asignada' : 'Switch L2 (24 Puertos)');
-        badge.classList.remove('hidden');
-
-        if(node.type === 'switch') iconBox.innerHTML = '<i class="fa-solid fa-server text-cyan-400"></i>';
-        if(node.type === 'router') iconBox.innerHTML = '<i class="fa-solid fa-network-wired text-blue-400"></i>';
-        if(node.type === 'pc') iconBox.innerHTML = '<i class="fa-solid fa-desktop text-indigo-400"></i>';
-
-        const tabGui = document.getElementById('tab-gui');
-        if(node.type === 'router') {
-          tabGui.classList.add('hidden');
-        } else {
-          tabGui.classList.remove('hidden');
-        }
-
-        renderPropertiesPanel(node);
-        updateOmadaGuiView(node);
-        setPanelTab('props');
-        
-        toggleRightPanel(true);
-      }
-      renderAll();
-    }
-
-    function renderPropertiesPanel(node) {
-      const container = document.getElementById('props-container');
-
-      if(!node) {
-        container.innerHTML = `<p class="text-xs text-slate-500 text-center py-8">Selecciona un dispositivo para configurar.</p>`;
-        return;
-      }
-
-      if(node.type === 'router') {
-        const connectedCables = cables.filter(c => c.from === node.id || c.to === node.id);
-        let portsListHtml = '';
-
-        connectedCables.forEach((c) => {
-          const myPort = c.from === node.id ? c.fromPort : c.toPort;
-          const targetId = c.from === node.id ? c.to : c.from;
-          const target = nodes.find(n => n.id === targetId);
-          portsListHtml += `
-            <div class="p-2 bg-slate-900 rounded border border-slate-800 flex items-center justify-between text-xs">
-              <span class="font-mono text-cyan-400 font-bold">${myPort}</span>
-              <span class="text-slate-300">${target ? target.label : 'Desconocido'}</span>
-              <span class="font-mono text-emerald-400 text-[11px]">${target && target.ip ? target.ip : 'Auto-DHCP'}</span>
-            </div>
-          `;
-        });
-
-        if(!portsListHtml) {
-          portsListHtml = `<p class="text-[11px] text-slate-500 italic">No hay dispositivos conectados a los puertos LAN.</p>`;
-        }
-
-        container.innerHTML = `
-          <div class="space-y-4">
-            <div class="p-3 bg-blue-950/30 border border-blue-800/40 rounded-xl space-y-2">
-              <div class="text-xs font-bold text-blue-200">Ajustes del Router</div>
-              <div>
-                <label class="text-[10px] text-slate-400 block mb-0.5">Nombre del Dispositivo</label>
-                <input type="text" id="prop-name-input" value="${node.label}" class="w-full bg-slate-900 border border-slate-700 rounded px-2.5 py-1 text-xs text-slate-200">
-              </div>
-              <div>
-                <label class="text-[10px] text-slate-400 block mb-0.5">Dirección IP Gateway</label>
-                <input type="text" id="prop-ip-input" value="${node.ip}" placeholder="Ej: 10.0.0.1" class="w-full bg-slate-900 border border-slate-700 rounded px-2.5 py-1 text-xs text-slate-200 font-mono">
-              </div>
-              <div class="pt-1 flex justify-end">
-                <button onclick="applyRouterProps('${node.id}')" class="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded text-xs font-bold">Aplicar</button>
-              </div>
-            </div>
-
-            <div class="p-3 bg-slate-950/70 border border-slate-800 rounded-xl space-y-2">
-              <div class="text-xs font-bold text-slate-300 flex items-center justify-between">
-                <span>Servidor DHCP Central</span>
-                <span class="text-[10px] ${node.dhcpEnabled ? 'text-emerald-400 font-bold' : 'text-slate-500'}">${node.dhcpEnabled ? 'ACTIVO' : 'INACTIVO'}</span>
-              </div>
-              <button onclick="toggleRouterDhcpProp('${node.id}')" class="w-full py-1.5 ${node.dhcpEnabled ? 'bg-amber-600/20 border border-amber-500/40 text-amber-300' : 'bg-emerald-600 hover:bg-emerald-500 text-white'} rounded font-bold text-xs">
-                ${node.dhcpEnabled ? 'Desactivar DHCP' : 'Activar Servidor DHCP'}
-              </button>
-            </div>
-
-            <div class="p-3 bg-slate-950/70 border border-slate-800 rounded-xl space-y-2">
-              <div class="text-xs font-bold text-slate-300">Puertos en Uso</div>
-              <div class="space-y-1.5">${portsListHtml}</div>
-            </div>
-          </div>
-        `;
-      } else if(node.type === 'switch') {
-        const connectedCount = cables.filter(c => c.from === node.id || c.to === node.id).length;
-        const freePorts = 24 - connectedCount;
-
-        const allVlans = [];
-        nodes.filter(n => n.type === 'switch').forEach(sw => {
-          sw.vlans.forEach(v => {
-            if(!allVlans.some(ev => ev.id === v.id)) {
-              allVlans.push(v);
-            }
-          });
-        });
-
-        let vlanSummaryHtml = '';
-        allVlans.forEach(v => {
-          const pcsInVlan = nodes.filter(n => n.type === 'pc' && n.vlanId === v.id);
-          const pcsListText = pcsInVlan.length > 0 
-            ? pcsInVlan.map(p => p.label).join(', ') 
-            : 'Ningún equipo asignado';
-
-          vlanSummaryHtml += `
-            <div class="p-2 bg-slate-900 rounded border border-slate-800/80 space-y-1 font-mono text-xs">
-              <div class="flex items-center justify-between">
-                <span class="text-slate-200 font-bold">VLAN ${v.id} (${v.name})</span>
-                <span class="text-[10px] text-emerald-400 font-bold">Activa</span>
-              </div>
-              <div class="text-[10.5px] text-slate-400 flex items-center gap-1">
-                <i class="fa-solid fa-laptop-code text-cyan-400"></i> Equipos: <span class="text-cyan-200 font-sans">${pcsListText}</span>
-              </div>
-            </div>
-          `;
-        });
-
-        container.innerHTML = `
-          <div class="space-y-4">
-            <div class="p-3 bg-cyan-950/30 border border-cyan-800/40 rounded-xl space-y-2">
-              <div class="text-xs font-bold text-cyan-200">Ajustes del Switch Gestorable</div>
-              <div class="flex gap-2">
-                <input type="text" id="prop-name-input" value="${node.label}" class="flex-1 bg-slate-900 border border-slate-700 rounded px-2.5 py-1 text-xs text-slate-200">
-                <button onclick="applySwitchProps('${node.id}')" class="px-3 py-1 bg-cyan-600 hover:bg-cyan-500 text-white rounded text-xs font-bold">Guardar</button>
-              </div>
-            </div>
-
-            <div class="p-3 bg-slate-950/70 border border-slate-800 rounded-xl space-y-2">
-              <div class="text-xs font-bold text-slate-300">Estado de Puertos (Capacidad: 24 LAN)</div>
-              <div class="grid grid-cols-2 gap-2 font-mono text-xs">
-                <div class="p-2 bg-slate-900 rounded border border-slate-800">
-                  <div class="text-slate-500 text-[10px]">Puertos Usados</div>
-                  <div class="text-emerald-400 font-bold text-sm">${connectedCount}</div>
-                </div>
-                <div class="p-2 bg-slate-900 rounded border border-slate-800">
-                  <div class="text-slate-500 text-[10px]">Puertos Libres</div>
-                  <div class="text-cyan-400 font-bold text-sm">${freePorts}</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="p-3 bg-slate-950/70 border border-slate-800 rounded-xl space-y-2">
-              <div class="text-xs font-bold text-slate-300 flex items-center justify-between">
-                <span>VLANs Configuradas y Equipos</span>
-                <button onclick="setPanelTab('gui')" class="text-[10px] text-cyan-400 hover:underline">Ir a GUI Omada &rarr;</button>
-              </div>
-              <div class="space-y-1.5">
-                ${vlanSummaryHtml}
-              </div>
-            </div>
-          </div>
-        `;
-      } else {
-        // PROPIEDADES PC / WORKSTATION
-        container.innerHTML = `
-          <div class="space-y-4">
-            <div class="p-3 bg-indigo-950/30 border border-indigo-800/40 rounded-xl space-y-3">
-              <div class="text-xs font-bold text-indigo-200">Configuración de PC / Workstation</div>
-              <div>
-                <label class="text-[10px] text-slate-400 block mb-0.5">Nombre del PC</label>
-                <input type="text" id="pc-name-input" value="${node.label}" placeholder="Ej: ventas 1, deposito 1" class="w-full bg-slate-900 border border-slate-700 rounded px-2.5 py-1 text-xs text-slate-200">
-              </div>
-              <div>
-                <label class="text-[10px] text-slate-400 block mb-0.5">Dirección IP</label>
-                <input type="text" id="pc-ip-input" value="${node.ip}" placeholder="Ej: 10.0.0.15" class="w-full bg-slate-900 border border-slate-700 rounded px-2.5 py-1 text-xs text-slate-200 font-mono">
-              </div>
-              <div class="flex items-center gap-2 pt-1">
-                <input type="checkbox" id="pc-dhcp-check" ${node.dhcpEnabled ? 'checked' : ''} onchange="togglePcDhcpState('${node.id}', this.checked)">
-                <label for="pc-dhcp-check" class="text-xs text-slate-300">Habilitar cliente DHCP en PC</label>
-              </div>
-              <div>
-                <label class="text-[10px] text-slate-400 block mb-0.5">Asignación de VLAN ID</label>
-                <select id="pc-vlan-select" onchange="updatePcVlan('${node.id}', this.value)" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-slate-200">
-                  <option value="1" ${node.vlanId === 1 ? 'selected' : ''}>None (VLAN Nativa / Defecto)</option>
-                  <option value="10" ${node.vlanId === 10 ? 'selected' : ''}>VLAN 10 - Ventas</option>
-                  <option value="20" ${node.vlanId === 20 ? 'selected' : ''}>VLAN 20 - deposito</option>
-                </select>
-              </div>
-              <button onclick="applyPcProps('${node.id}')" class="w-full py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded font-bold text-xs">Guardar Cambios</button>
-            </div>
-          </div>
-        `;
-      }
-    }
-
-    function togglePcDhcpState(id, checked) {
-      saveState();
-      const node = nodes.find(n => n.id === id);
-      if(node) {
-        node.dhcpEnabled = checked;
-        const router = nodes.find(n => n.type === 'router' && n.dhcpEnabled);
-        if(checked && router) {
-          node.ip = generateIpFromRouter(router.ip);
-        } else if(!checked) {
-          node.ip = '';
-        }
-        renderPropertiesPanel(node);
-        renderAll();
-        checkLabProgress();
-      }
-    }
-
-    function generateIpFromRouter(routerIp) {
-      if(!routerIp) return '10.0.0.15';
-      const parts = routerIp.split('.');
-      if(parts.length === 4) {
-        return `${parts[0]}.${parts[1]}.${parts[2]}.${Math.floor(Math.random() * 50 + 10)}`;
-      }
-      return '10.0.0.15';
-    }
-
-    function isClassA(ip) {
-      if(!ip) return false;
-      const firstOctet = parseInt(ip.split('.')[0], 10);
-      return !isNaN(firstOctet) && firstOctet >= 1 && firstOctet <= 126;
-    }
-
-    function updatePcVlan(id, vlanId) {
-      saveState();
-      const node = nodes.find(n => n.id === id);
-      if(node) {
-        node.vlanId = parseInt(vlanId);
-        renderAll();
-        checkLabProgress();
-      }
-    }
-
-    function applyRouterProps(id) {
-      saveState();
-      const node = nodes.find(n => n.id === id);
-      if(node) {
-        const oldIp = node.ip;
-        node.label = document.getElementById('prop-name-input').value.trim() || node.label;
-        node.ip = document.getElementById('prop-ip-input').value.trim() || node.ip;
-        
-        if(node.dhcpEnabled && oldIp !== node.ip) {
-          nodes.filter(n => n.type === 'pc' && n.dhcpEnabled).forEach(pc => {
-            pc.ip = generateIpFromRouter(node.ip);
-          });
-        }
-
-        selectNode(id);
-        renderAll();
-        checkLabProgress();
-      }
-    }
-
-    function applySwitchProps(id) {
-      saveState();
-      const node = nodes.find(n => n.id === id);
-      if(node) {
-        node.label = document.getElementById('prop-name-input').value.trim() || node.label;
-        selectNode(id);
-        renderAll();
-      }
-    }
-
-    function applyPcProps(id) {
-      saveState();
-      const node = nodes.find(n => n.id === id);
-      if(node) {
-        node.label = document.getElementById('pc-name-input').value.trim() || node.label;
-        node.ip = document.getElementById('pc-ip-input').value.trim() || node.ip;
-        selectNode(id);
-        renderAll();
-        checkLabProgress();
-      }
-    }
-
-    function toggleRouterDhcpProp(id) {
-      saveState();
-      const node = nodes.find(n => n.id === id);
-      if(node) {
-        node.dhcpEnabled = !node.dhcpEnabled;
-        if(node.dhcpEnabled) {
-          nodes.filter(n => n.type === 'pc' && n.dhcpEnabled).forEach(pc => {
-            pc.ip = generateIpFromRouter(node.ip);
-          });
-        }
-        selectNode(id);
-        renderAll();
-        checkLabProgress();
-      }
-    }
-
-    function updateOmadaGuiView(node) {
-      const vlanTable = document.getElementById('vlan-table-body');
-      const pvidContainer = document.getElementById('pvid-ports-container');
-
-      if(!node || node.type !== 'switch') {
-        vlanTable.innerHTML = `<tr><td colspan="6" class="text-center py-4 text-slate-500">Selecciona un Switch para gestionar sus VLANs.</td></tr>`;
-        pvidContainer.innerHTML = '';
-        return;
-      }
-
-      vlanTable.innerHTML = '';
-      node.vlans.forEach(v => {
-        const tr = document.createElement('tr');
-        tr.className = 'border-b border-slate-800/40 hover:bg-slate-800/30';
-        tr.innerHTML = `
-          <td class="py-1.5 px-1 font-bold text-slate-200">${v.id}</td>
-          <td class="py-1.5 px-1 text-slate-300">${v.name}</td>
-          <td class="text-center"><span class="px-1 bg-emerald-500/20 text-emerald-400 rounded">U</span></td>
-          <td class="text-center"><span class="px-1 bg-emerald-500/20 text-emerald-400 rounded">U</span></td>
-          <td class="text-center"><span class="px-1 bg-slate-800 text-slate-500 rounded">N</span></td>
-          <td class="text-center"><span class="px-1 bg-slate-800 text-slate-500 rounded">N</span></td>
-        `;
-        vlanTable.appendChild(tr);
-      });
-
-      const switchCables = cables.filter(c => c.from === node.id || c.to === node.id);
-      
-      pvidContainer.innerHTML = '';
-
-      const maxPortsToShow = showAllPortsInSwitch ? 24 : 4;
-      document.getElementById('ports-visible-count-label').innerText = `Puertos: ${maxPortsToShow}/24`;
-
-      for(let i = 1; i <= maxPortsToShow; i++) {
-        const portName = `LAN${i}`;
-        const cable = switchCables.find(c => (c.from === node.id && c.fromPort === portName) || (c.to === node.id && c.toPort === portName));
-        
-        let connectedPc = null;
-        if(cable) {
-          const targetId = cable.from === node.id ? cable.to : cable.from;
-          const targetNode = nodes.find(n => n.id === targetId);
-          if(targetNode && targetNode.type === 'pc') {
-            connectedPc = targetNode;
-          }
-        }
-
-        const hasPc = !!connectedPc;
-        const iconColorClass = hasPc ? 'text-emerald-400 font-bold' : 'text-slate-600';
-        const bgPortClass = hasPc ? 'bg-slate-900 border-emerald-500/40' : 'bg-slate-950/60 border-slate-800 opacity-60';
-
-        let optionsHtml = '';
-        if(hasPc) {
-          node.vlans.forEach(v => {
-            optionsHtml += `<option value="${v.id}" ${connectedPc.vlanId === v.id ? 'selected' : ''}>VLAN ${v.id} - ${v.name}</option>`;
-          });
-        }
-
-        pvidContainer.innerHTML += `
-          <div class="p-2 rounded border ${bgPortClass} flex items-center justify-between">
-            <span class="font-mono text-xs flex items-center gap-1.5">
-              <i class="fa-solid fa-network-wired ${iconColorClass}"></i>
-              <span class="text-slate-300">${portName}:</span>
-              <span class="${hasPc ? 'text-cyan-300 font-bold' : 'text-slate-500'}">${hasPc ? connectedPc.label : '(Sin PC)'}</span>
-            </span>
-            ${hasPc ? `
-              <select onchange="updatePcVlan('${connectedPc.id}', this.value)" class="bg-slate-950 border border-slate-700 rounded px-2 py-1 text-xs text-slate-200 focus:border-cyan-500 focus:outline-none">
-                ${optionsHtml}
-              </select>
-            ` : `<span class="text-[10px] text-slate-600 italic">No editable</span>`}
-          </div>
-        `;
-      }
-    }
-
-    function toggleMorePorts() {
-      showAllPortsInSwitch = !showAllPortsInSwitch;
-      const btn = document.getElementById('show-more-ports-btn');
-      btn.innerHTML = showAllPortsInSwitch 
-        ? `<i class="fa-solid fa-minus-circle"></i> Mostrar solo 4 bocas principales` 
-        : `<i class="fa-solid fa-plus-circle"></i> Mostrar más bocas con PCs conectadas`;
-      
-      const node = nodes.find(n => n.id === selectedNodeId);
-      if(node) updateOmadaGuiView(node);
-    }
-
-    function savePvidConfig() {
-      showVlanGuiAlert("¡Configuración de PVID guardada correctamente!", 3500);
-      renderAll();
-      checkLabProgress();
-    }
-
-    function addVlanFromPanel() {
-      saveState();
-      const idInput = document.getElementById('vlan-id-input');
-      const nameInput = document.getElementById('vlan-name-input');
-      const vlanId = parseInt(idInput.value);
-      const name = nameInput.value.trim();
-
-      if(!vlanId || !name) {
-        alert("Ingresa un ID y un Nombre de VLAN válidos.");
-        return;
-      }
-
-      const node = nodes.find(n => n.id === selectedNodeId);
-      if(!node || node.type !== 'switch') {
-        alert("Debes seleccionar un Switch para añadir la VLAN.");
-        return;
-      }
-
-      node.vlans.push({ id: vlanId, name, ports: ['LAN1'], pvid: vlanId });
-      idInput.value = '';
-      nameInput.value = '';
-      updateOmadaGuiView(node);
-      renderPropertiesPanel(node);
-      showVlanGuiAlert(`VLAN ${vlanId} (${name}) creada con éxito.`);
-      checkLabProgress();
-    }
-
-    function setPanelTab(tab) {
-      document.getElementById('panel-props-view').classList.add('hidden');
-      document.getElementById('panel-gui-view').classList.add('hidden');
-      document.getElementById('panel-cli-view').classList.add('hidden');
-
-      document.getElementById('tab-props').className = 'px-3 py-2 text-xs font-bold rounded-t-lg border-b-2 border-transparent text-slate-400';
-      document.getElementById('tab-gui').className = 'px-3 py-2 text-xs font-bold rounded-t-lg border-b-2 border-transparent text-slate-400';
-      document.getElementById('tab-cli').className = 'px-3 py-2 text-xs font-bold rounded-t-lg border-b-2 border-transparent text-slate-400';
-
-      if(tab === 'props') {
-        document.getElementById('panel-props-view').classList.remove('hidden');
-        document.getElementById('tab-props').className = 'px-3 py-2 text-xs font-bold rounded-t-lg border-b-2 border-emerald-500 text-emerald-400 bg-slate-900';
-      } else if(tab === 'gui') {
-        document.getElementById('panel-gui-view').classList.remove('hidden');
-        document.getElementById('tab-gui').className = 'px-3 py-2 text-xs font-bold rounded-t-lg border-b-2 border-emerald-500 text-emerald-400 bg-slate-900';
-      } else if(tab === 'cli') {
-        document.getElementById('panel-cli-view').classList.remove('hidden');
-        document.getElementById('tab-cli').className = 'px-3 py-2 text-xs font-bold rounded-t-lg border-b-2 border-emerald-500 text-emerald-400 bg-slate-900';
-      }
-    }
-
-    // MANEJO DE COMANDOS CLI Y COMPROBACIÓN DEL PASO 6
-    function handleCliSubmit(e) {
-      e.preventDefault();
-      const input = document.getElementById('cli-input');
-      const output = document.getElementById('cli-output');
-      const rawCmd = input.value.trim();
-      const cmd = rawCmd.toLowerCase();
-      input.value = '';
-
-      output.innerHTML += `<div class="text-slate-200">&gt; ${rawCmd}</div>`;
-
-      if(cmd === 'show vlan') {
-        output.innerHTML += `<div class="text-emerald-400">VLAN Name Status Ports<br>---- ------------------ --------- --------------------<br>1 Default active LAN1, LAN2, LAN3, LAN4<br>10 Ventas active LAN5<br>20 deposito active LAN6</div>`;
-      } else if(cmd.startsWith('ping')) {
-        const parts = rawCmd.split(' ').filter(p => p !== '');
-
-        if(parts.length < 2) {
-          output.innerHTML += `<div class="text-rose-400 font-mono">Sintaxis incorrecta. Sintaxis: 'ping [nombre_equipo]'</div>`;
-          output.scrollTop = output.scrollHeight;
-          return;
-        }
-
-        const targetSearch = parts.slice(1).join(' ').toLowerCase();
-        const targetNode = nodes.find(n => n.label.toLowerCase() === targetSearch || (n.ip && n.ip === targetSearch));
-
-        if(!targetNode) {
-          output.innerHTML += `<div class="text-rose-400 font-mono">Haciendo ping a ${targetSearch}:<br>Respuesta: host inaccesible.<br>Respuesta: host inaccesible.<br>Respuesta: host inaccesible.<br>Respuesta: host inaccesible.<br>Paquetes: enviados = 4, recibidos = 0, perdidos = 4 (100% perdidos).</div>`;
-          output.scrollTop = output.scrollHeight;
-          return;
-        }
-
-        const sourceNode = nodes.find(n => n.id === selectedNodeId) || nodes.find(n => n.type === 'pc');
-
-        let isSuccessful = false;
-
-        if(sourceNode && sourceNode.type === 'pc' && targetNode.type === 'pc') {
-          if(sourceNode.vlanId === targetNode.vlanId) {
-            isSuccessful = true;
-          }
-        } else if(sourceNode.type === 'router' || targetNode.type === 'router') {
-          isSuccessful = true;
-        }
-
-        if(isSuccessful) {
-          output.innerHTML += `
-            <div class="text-cyan-400 font-mono">
-              Haciendo ping a ${targetNode.label} [${targetNode.ip || '10.0.0.x'}] con 32 bytes de datos:<br>
-              Respuesta desde ${targetNode.ip || '10.0.0.x'}: bytes=32 tiempo=1ms TTL=64 (Afirmativa)<br>
-              Respuesta desde ${targetNode.ip || '10.0.0.x'}: bytes=32 tiempo=1ms TTL=64 (Afirmativa)<br>
-              Respuesta desde ${targetNode.ip || '10.0.0.x'}: bytes=32 tiempo=1ms TTL=64 (Afirmativa)<br>
-              Respuesta desde ${targetNode.ip || '10.0.0.x'}: bytes=32 tiempo=1ms TTL=64 (Afirmativa)<br>
-              <span class="text-emerald-400">Paquetes: enviados = 4, recibidos = 4, perdidos = 0 (0% perdidos). [PING OK]</span>
-            </div>
-          `;
-        } else {
-          output.innerHTML += `
-            <div class="text-rose-400 font-mono">
-              Haciendo ping a ${targetNode.label} [${targetNode.ip || 'Sin IP'}] con 32 bytes de datos:<br>
-              Tiempo de espera agotado para esta solicitud. (Negativa/Falla)<br>
-              Tiempo de espera agotado para esta solicitud. (Negativa/Falla)<br>
-              Tiempo de espera agotado para esta solicitud. (Negativa/Falla)<br>
-              Tiempo de espera agotado para esta solicitud. (Negativa/Falla)<br>
-              <span class="text-amber-300">Paquetes: enviados = 4, recibidos = 0, perdidos = 4 (100% perdidos). [AISLAMIENTO CAPA 2 BLOQUEADO]</span>
-            </div>
-          `;
-        }
-
-        // REGISTRO DE PRUEBAS DEL PUNTO 6
-        if(sourceNode && sourceNode.type === 'pc' && targetNode.type === 'pc') {
-          if(targetNode.vlanId === 1) {
-            step6Tests.noVlan = true;
-          } else if(sourceNode.vlanId === targetNode.vlanId) {
-            step6Tests.sameVlan = true;
-          } else if(sourceNode.vlanId !== targetNode.vlanId) {
-            step6Tests.otherVlan = true;
-          }
-        }
-
-        checkLabProgress();
-
-      } else if(cmd === 'help') {
-        output.innerHTML += `<div class="text-slate-400">Comandos disponibles: show vlan, ping [equipo/ip]</div>`;
-      } else {
-        output.innerHTML += `<div class="text-rose-400">Comando no reconocido. Escribe 'help'.</div>`;
-      }
-
-      output.scrollTop = output.scrollHeight;
-    }
-
-    function initDraggableLab() {
-      const widget = document.getElementById('lab-widget');
-      const header = document.getElementById('lab-header');
-
-      let isDragging = false;
-      let offsetX, offsetY;
-
-      header.onmousedown = (e) => {
-        isDragging = true;
-        offsetX = e.clientX - widget.offsetLeft;
-        offsetY = e.clientY - widget.offsetTop;
-
-        const onMouseMove = (me) => {
-          if(!isDragging) return;
-          widget.style.left = (me.clientX - offsetX) + 'px';
-          widget.style.top = (me.clientY - offsetY) + 'px';
-        };
-
-        const onMouseUp = () => {
-          isDragging = false;
-          window.removeEventListener('mousemove', onMouseMove);
-          window.removeEventListener('mouseup', onMouseUp);
-        };
-
-        window.addEventListener('mousemove', onMouseMove);
-        window.addEventListener('mouseup', onMouseUp);
-      };
-    }
-
-    function toggleLabMinimize() {
-      const widget = document.getElementById('lab-widget');
-      const minBtn = document.getElementById('lab-min-btn');
-
-      if(widget.classList.contains('hidden')) {
-        widget.classList.remove('hidden');
-        minBtn.classList.add('hidden');
-      } else {
-        widget.classList.add('hidden');
-        minBtn.classList.remove('hidden');
-      }
-    }
-
-    function checkLabProgress() {
-      const router = nodes.find(n => n.type === 'router');
-      const routerCount = nodes.filter(n => n.type === 'router').length;
-      const switches = nodes.filter(n => n.type === 'switch');
-      const switchCount = switches.length;
-      const pcs = nodes.filter(n => n.type === 'pc');
-      const pcCount = pcs.length;
-      
-      const routerDhcpActive = router && router.dhcpEnabled;
-      const routerClassA = router && isClassA(router.ip);
-      const pcsWithDhcpActive = pcs.filter(n => n.dhcpEnabled).length;
-
-      const sw1 = switches[0];
-      const sw2 = switches[1];
-
-      const getPcsConnectedToSwitch = (sw) => {
-        if(!sw) return [];
-        const swCables = cables.filter(c => c.from === sw.id || c.to === sw.id);
-        const targetIds = swCables.map(c => c.from === sw.id ? c.to : c.from);
-        return pcs.filter(p => targetIds.includes(p.id));
-      };
-
-      const pcsSw1 = getPcsConnectedToSwitch(sw1);
-      const pcsSw2 = getPcsConnectedToSwitch(sw2);
-
-      const sw1HasVlan10 = sw1 && sw1.vlans.some(v => v.id === 10 && v.name.toLowerCase() === 'ventas');
-      const pcsInSw1Vlan10 = pcsSw1.filter(p => p.vlanId === 10).length;
-
-      const sw2HasVlan20 = sw2 && sw2.vlans.some(v => v.id === 20 && v.name.toLowerCase() === 'deposito');
-      const pcsInSw2Vlan20 = pcsSw2.filter(p => p.vlanId === 20).length;
-
-      const pcLabels = pcs.map(p => p.label.toLowerCase().trim());
-      const hasVentas1 = pcLabels.includes('ventas 1') || pcLabels.includes('ventas1');
-      const hasVentas2 = pcLabels.includes('ventas 2') || pcLabels.includes('ventas2');
-      const hasDeposito1 = pcLabels.includes('deposito 1') || pcLabels.includes('deposito1');
-      const hasDeposito2 = pcLabels.includes('deposito 2') || pcLabels.includes('deposito2');
-      const allPcsDhcp = pcCount > 0 && pcsWithDhcpActive === pcCount;
-
-      if(currentLabStep === 1 && routerCount >= 1 && switchCount >= 2 && cables.length >= 2) {
-        currentLabStep = 2;
-      } else if(currentLabStep === 2 && pcCount >= 6) {
-        currentLabStep = 3;
-      } else if(currentLabStep === 3 && routerDhcpActive && routerClassA) {
-        currentLabStep = 4;
-      } else if(currentLabStep === 4 && sw1HasVlan10 && pcsInSw1Vlan10 >= 2) {
-        currentLabStep = 5;
-      } else if(currentLabStep === 5 && sw2HasVlan20 && pcsInSw2Vlan20 >= 2 && hasVentas1 && hasVentas2 && hasDeposito1 && hasDeposito2 && allPcsDhcp) {
-        currentLabStep = 6;
-      } else if(currentLabStep === 6) {
-        // Muestra las felicitaciones cuando el usuario realiza las 3 comprobaciones de ping requeridas en el paso 6
-        if(step6Tests.sameVlan && (step6Tests.otherVlan || step6Tests.noVlan)) {
-          document.getElementById('center-congratulations-modal').classList.remove('hidden');
-        }
-      }
-
-      updateLabUI();
-    }
-
-    function updateLabUI() {
-      const percent = Math.round(((currentLabStep - 1) / 5) * 100);
-      document.getElementById('lab-progress-bar').style.width = percent + '%';
-      document.getElementById('lab-progress-badge').innerText = `Progreso: ${percent}%`;
-      document.getElementById('min-progress-text').innerText = `${percent}%`;
-
-      const titles = [
-        "1. Backbone (Router + 2 switches)",
-        "2. Conectar 3 PCs a cada Switch (6 PCs)",
-        "3. IP Clase A y DHCP en Router",
-        "4. Crear VLAN 10 (Ventas) en Switch 1",
-        "5. VLAN 20 (deposito) en SW2, Nombres y DHCP",
-        "6. Pruebas de ping y aislamiento"
-      ];
-
-      const descs = [
-        "Coloca 1 Router y 2 Switches en el lienzo y conéctalos usando cables UTP.",
-        "Agrega 6 PCs en total, conectando 3 al Switch 1 y 3 al Switch 2.",
-        "Cambia la IP del Router a una red de Clase A (ej: 10.0.0.1) y activa el servidor DHCP.",
-        "Crea la VLAN 10 de nombre 'Ventas' en Switch 1 y asigna 2 de sus equipos a esta VLAN.",
-        "Crea la VLAN 20 de nombre 'deposito' en Switch 2 (2 equipos asignados), asigna nombres (ventas 1, ventas 2, deposito 1, deposito 2) y activa DHCP en todas las PCs.",
-        "En la consola CLI realiza pruebas de ping a: un PC sin VLAN, un PC en la misma VLAN y un PC en otra VLAN."
-      ];
-
-      document.getElementById('lab-current-title').innerText = titles[currentLabStep - 1];
-      document.getElementById('lab-current-desc').innerText = descs[currentLabStep - 1];
-
-      for(let i = 1; i <= 6; i++) {
-        const icon = document.getElementById(`step-icon-${i}`);
-        const text = document.getElementById(`step-text-${i}`);
-        if(i < currentLabStep) {
-          icon.className = "fa-solid fa-circle-check text-emerald-400 text-sm mt-0.5";
-          text.className = "text-xs font-semibold text-emerald-300 line-through";
-        } else if(i === currentLabStep) {
-          icon.className = "fa-solid fa-spinner fa-spin text-amber-400 text-sm mt-0.5";
-          text.className = "text-xs font-bold text-amber-200";
-        } else {
-          icon.className = "fa-regular fa-circle text-slate-600 text-sm mt-0.5";
-          text.className = "text-xs font-semibold text-slate-400";
-        }
-      }
-    }
-
-    function toggleHint() {
-      const hintBox = document.getElementById('hint-box');
-      const hints = [
-        "Pista: Arrastra 1 Router y 2 Switches al lienzo. Conéctalos usando los puertos LAN.",
-        "Pista: Conecta 3 PCs a Switch 1 y 3 PCs a Switch 2.",
-        "Pista: Selecciona el Router > Propiedades > Cambia su IP a una red de Clase A (ej: 10.0.0.1) y activa el Servidor DHCP.",
-        "Pista: Selecciona Switch 1 > Omada GUI > Crea la VLAN 10 'Ventas' y en la sección PVID asigna 2 equipos a la VLAN 10.",
-        "Pista: En Switch 2 crea la VLAN 20 'deposito' y asigna 2 equipos. Luego asigna los nombres ventas 1, ventas 2, deposito 1, deposito 2 y marca la casilla DHCP en cada PC.",
-        "Pista: Abre la pestaña Consola/CLI en ventas 1 y haz ping a 'ventas 2' (misma VLAN), 'deposito 1' (otra VLAN) y un PC sin VLAN."
-      ];
-      document.getElementById('hint-text').innerText = hints[currentLabStep - 1];
-      hintBox.classList.toggle('hidden');
-    }
-
-    function skipStep() {
-      if(currentLabStep < 6) {
-        currentLabStep++;
-        updateLabUI();
-      }
-    }
-
-    function resetLab() {
-      nodes = [];
-      cables = [];
-      stateHistory = [];
-      selectedNodeId = null;
-      cableStartNodeId = null;
-      cableStartPort = null;
-      currentLabStep = 1;
-
-      step6Tests = {
-        sameVlan: false,
-        otherVlan: false,
-        noVlan: false
-      };
-
-      saveState();
-      renderAll();
-      updateLabUI();
-      updateOmadaGuiView(null);
-      showCablingAlert(null);
-      toggleRightPanel(false);
-
-      document.getElementById('device-title').innerText = "Ningún dispositivo seleccionado";
-      document.getElementById('device-sub').innerText = "Selecciona un nodo en el lienzo para configurar";
-      document.getElementById('device-badge').classList.add('hidden');
-      document.getElementById('props-container').innerHTML = `<p class="text-xs text-slate-500 text-center py-8">Selecciona un dispositivo para configurar.</p>`;
-    }
-
-    function toggleSimulation() {
-      simulationActive = !simulationActive;
-      document.getElementById('sim-btn-text').innerText = simulationActive ? 'Simulación Activa' : 'Simulación Pausada';
-      renderAll();
-    }
-
-    function toggleFullscreen() {
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
-      } else {
-        if (document.exitFullscreen) document.exitFullscreen();
-      }
-    }
-  </script>
+  <!-- EXTERNAL SCRIPT LOGIC -->
+  <script src="script.js"></script>
 </body>
 </html>
